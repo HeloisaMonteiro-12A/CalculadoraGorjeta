@@ -44,7 +44,8 @@ main{
     padding: 2rem;
 }
 
-.conta{
+.conta,
+.tip{
     margin-bottom: 2rem;
 }
 
@@ -89,10 +90,28 @@ main{
 
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem
-    ;
+    gap: 1rem;
+}
+
+.tip input{
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    text-align: center;
+    padding-block: 0.4rem;
+    border-radius: 0.3125rem;
+    background-color: var(--chocolate-cosmos);
+    color: var(--white);
 }
 
 .tip #outra{
     width: 100%;
+    background-color: var(--floral-white);
+    color: var(--chocolate-cosmos);
+}
+
+
+.tip input::placeholder{
+    color: var(--old-rose);
 }
