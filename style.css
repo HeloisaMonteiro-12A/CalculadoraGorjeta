@@ -1,7 +1,10 @@
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Space mono", serif;
 }
 
 :root {
@@ -16,7 +19,7 @@
     --outer-space: #273d2a;
 
     --white: #fff;
-    --floral-white: #FFF8F0;
+    --floral-white: #fff7ee;
     --pale-dogwood: #E4BFB7;
     --old-rose: #C9867E;
     --redwood: #AE4D45;
@@ -27,11 +30,69 @@
 }
 
 body{
-    background: var(--floral-white);
+    background: var(--pale-dogwood);
 }
 
 header{
     display: flex;
     justify-content: center;
     padding-block: 2.8rem;
+}
+
+main{
+    background: var(--white);
+    padding: 2rem;
+}
+
+.conta{
+    margin-bottom: 2rem;
+}
+
+.conta label,
+.gorjeta label{
+    color: var(--redwood);
+    font-weight: 700;
+}
+
+.conta div{
+    margin-top: 0.4rem;
+    background-color: var(--floral-white);
+    padding: 0.4rem 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0.3125;
+}
+
+.conta input{
+    border: none;
+    text-align: right;
+    width: 100%;
+    background: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--chocolate-cosmos);
+    outline: none;
+}
+
+.conta input::placeholder{
+    color: var(--old-rose);
+}
+
+.conta:has(input:focus) div{
+    outline: 2px solid var(--penn-red);
+    border-radius: 0.3125;
+}
+
+.tip div{
+    margin-top: 1rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem
+    ;
+}
+
+.tip #outra{
+    width: 100%;
 }
