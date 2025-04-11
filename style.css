@@ -1,4 +1,10 @@
-root{
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
     --white: #fff;
     --mint-cream: #F1FFFA;
     --nyanza: #DFFEE3;
@@ -17,4 +23,15 @@ root{
     --penn-red: #92140C;
     --falu-red: #751712;
     --rosewood: #5e110e;
+    --chocolate-cosmos: #38060c;
+}
+
+body{
+    background: var(--floral-white);
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    padding-block: 2.8rem;
 }
