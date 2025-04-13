@@ -18,6 +18,7 @@
     --hunter-green: #4E6850;
     --outer-space: #273d2a;
 
+    --danger: #f35a18;
     --white: #fff;
     --floral-white: #fff7ee;
     --pale-dogwood: #E4BFB7;
@@ -26,6 +27,7 @@
     --penn-red: #92140C;
     --falu-red: #751712;
     --rosewood: #5e110e;
+    --dark-red: #510f17;
     --chocolate-cosmos: #38060c;
 }
 
@@ -59,14 +61,14 @@ main{
 }
 
 .conta div,
-.pessoas div{
+.pessoas .input-box{
     margin-top: 0.4rem;
     background-color: var(--floral-white);
     padding: 0.4rem 1.2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-radius: 0.3125;
+    border-radius: 0.3125rem;
 }
 
 .conta input,
@@ -87,9 +89,14 @@ main{
 }
 
 .conta:has(input:focus) div,
-.pessoas:has(input:focus) div{
+.conta:has(input:hover) div,
+.pessoas:has(input:focus) .input-box,
+.pessoas:has(input:hover) .input-box,
+.tip #outra:focus,
+.tip #outra:hover{
     outline: 2px solid var(--penn-red);
-    border-radius: 0.3125;
+    border-radius: 0.3125rem;
+    cursor: pointer;
 }
 
 .tip div{
@@ -112,18 +119,36 @@ main{
     color: var(--white);
 }
 
+.tip input[type="button"]:hover,
+.resultados button:hover{
+    background-color: var(--falu-red);
+    cursor:pointer;
+}
+
 .tip #outra{
     width: 100%;
     background-color: var(--floral-white);
     color: var(--chocolate-cosmos);
 }
 
-
 .tip input::placeholder{
     color: var(--old-rose);
 }
 
+.pessoas .textos{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pessoas #erro-div{
+    outline: 2px solid var(--danger);
+}
+
 .pessoas #erro{
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--danger);
     display: none;
 }
 
@@ -174,6 +199,12 @@ main{
     padding-block: 0.5rem;
 }
 
+.conta input::-webkit-inner-spin-button,
+.pessoas input::-webkit-inner-spin-button,
+.tip input::-webkit-inner-spin-button{
+    display: none;
+}
+
 @media(min-width: 920px){
     body{
         display: flex;
@@ -198,12 +229,6 @@ main{
 
     main section{
         width: 100%;
-    }
-
-    .conta input::-webkit-inner-spin-button,
-    .pessoas input::-webkit-inner-spin-button,
-    .tip input::-webkit-inner-spin-button{
-    display: none;
     }
 
     .tip div{
