@@ -1,5 +1,6 @@
 let conta = 0
 let pessoas = 0
+let porcentagem = 0
 
 const contaInput = document.querySelector(".conta input");
 contaInput.addEventListener("input", receberValorConta)
@@ -24,3 +25,15 @@ function receberQuantidadePessoas(evento){
         pessoas = Number(evento.target.value);    
     }
 }
+
+const botoesTip = document.querySelectorAll(".tip input[type='button']");
+botoesTip.forEach(botao => {
+    botao.addEventListener("click", receberValorTip)
+})
+
+function receberPorcentagem(){
+    porcentagem = Number(evento.target.value) / 100
+}
+
+
+
