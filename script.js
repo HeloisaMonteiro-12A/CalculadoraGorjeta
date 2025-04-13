@@ -7,6 +7,7 @@ contaInput.addEventListener("input", receberValorConta)
 
 function receberValorConta(evento){
     conta = Number(evento.target.value);
+    calcular()
 }
 
 const pessoasInput = document.querySelector("#pessoas");
@@ -24,6 +25,7 @@ function receberQuantidadePessoas(evento){
         divErro.setAttribute("id", "")
         pessoas = Number(evento.target.value);    
     }
+    calcular()
 }
 
 const botoesTip = document.querySelectorAll(".tip input[type='button']");
@@ -46,10 +48,36 @@ function receberPorcentagem(evento){
         porcentagem = 0
     }
     
-    console.log(porcentagem)
+    calcular()
 }
 
 const tipInput = document.querySelector("#outra")
 tipInput.addEventListener("input", receberPorcentagem)
+function calcular(){
+    if(conta !== 0 && pessoas !== 0 && porcentagem !== 0){
+        const strongTipTotal = document.querySelector("#tip-por-pessoa");
+        const strongTotal = document.querySelector("#total-por-pessoa");
 
+        if (strongTipTotal && strongTotal) {
+            strongTipTotal.innerHTML = `$${(conta * porcentagem / pessoas).toFixed(2)}`;
+            strongTotal.innerHTML = `$${((conta + (conta * porcentagem)) / pessoas).toFixed(2)}`;
+        }
+    }
+}
 
+const botaoLimpar = document.querySelector(".resultados button");
+botaoLimpar.addEventListener("click", limpar);
+
+function limpar(){
+    contaInput.value = "";
+
+    botoesTip.forEach(botao => {
+        botao.classList.remove("botao-ativo")
+    })
+
+    pessoasInput.value = "";
+
+    tipInput.value = "";
+    document.querySelector(".tip-total > strong").innerHTML = "$0.00";
+    document.querySelector(".total > strong").innerHTML = "$0.00";
+}
