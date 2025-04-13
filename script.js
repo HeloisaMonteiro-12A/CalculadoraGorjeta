@@ -80,4 +80,8 @@ function limpar(){
     tipInput.value = "";
     document.querySelector(".tip-total > strong").innerHTML = "$0.00";
     document.querySelector(".total > strong").innerHTML = "$0.00";
+
+    conta = 0
+    porcentagem = 0
+    pessoas = 0
 }
