@@ -25,9 +25,9 @@
     --old-rose: #C9867E;
     --redwood: #AE4D45;
     --penn-red: #92140C;
-    --falu-red: #751712;
-    --rosewood: #5e110e;
-    --dark-red: #510f17;
+    --falu-red: #7c140f;
+    --rosewood: #5b0e0c;
+    --dark-red: #4d0a12;
     --chocolate-cosmos: #38060c;
 }
 
@@ -119,9 +119,14 @@ main{
     color: var(--white);
 }
 
+.tip .botao-ativo{
+    background: var(--penn-red);
+    color: var(--chocolate-cosmos);
+}
+
 .tip input[type="button"]:hover,
 .resultados button:hover{
-    background-color: var(--falu-red);
+    background-color: var(--redwood);
     cursor:pointer;
 }
 

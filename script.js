@@ -28,11 +28,19 @@ function receberQuantidadePessoas(evento){
 
 const botoesTip = document.querySelectorAll(".tip input[type='button']");
 botoesTip.forEach(botao => {
-    botao.addEventListener("click", receberValorTip)
+    botao.addEventListener("click", receberPorcentagem)
 })
 
-function receberPorcentagem(){
-    porcentagem = Number(evento.target.value) / 100
+function receberPorcentagem(evento){
+    botoesTip.forEach(botao => {
+        botao.classList.remove("botao-ativo")
+
+        if(botao.value === evento.target.value){
+            botao.classList.add("botao-ativo")
+        }
+    })
+
+    porcentagem = parseFloat(evento.target.value) / 100
 }
 
 
