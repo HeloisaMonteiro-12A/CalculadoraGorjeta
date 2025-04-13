@@ -52,7 +52,8 @@ main{
 }
 
 .conta label,
-.gorjeta label{
+.tip label,
+.pessoas label{
     color: var(--redwood);
     font-weight: 700;
 }
@@ -132,7 +133,7 @@ main{
     padding: 1.5rem;
 }
 
-.resultados div{
+.resultados div div{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -170,5 +171,54 @@ main{
     font-weight: 700;
     text-transform: uppercase;
     font-size: 1.25rem;
-    padding: 0.5rem;
+    padding-block: 0.5rem;
+}
+
+@media(min-width: 920px){
+    body{
+        display: flex;
+        flex-direction: column;
+        min-height: 100svh;
+        justify-content: center;
+        gap: 5rem;
+    }
+
+    header{
+        padding: 0;
+    }
+
+    main{
+        display: flex;
+        gap:3rem;
+        padding: 3rem;
+        border-radius: 1.5625rem;
+        max-width: 57.5rem;
+        margin-inline: auto;
+    }
+
+    main section{
+        width: 100%;
+    }
+
+    .conta input::-webkit-inner-spin-button,
+    .pessoas input::-webkit-inner-spin-button,
+    .tip input::-webkit-inner-spin-button{
+    display: none;
+    }
+
+    .tip div{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .resultados{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        padding: 2.5rem;
+    }
+    .resultados div > strong{
+        color: var(--penn-red);
+        font-size: 3rem;
+    }
 }
